@@ -3,6 +3,9 @@ message: "Please cite this software release and the associated manuscript when u
 title: "FundusSigns-47: SCVPT research code"
 type: software
 version: 1.0.0
+doi: 10.5281/zenodo.23434142
+date-released: 2026-10-17
+repository-code: "https://github.com/Glaz-j/FundusSigns47-SCVPT"
 authors:
   - family-names: Wu
     given-names: Zhaoye

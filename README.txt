@@ -85,4 +85,7 @@ see THIRD_PARTY_NOTICES.txt. The license does not grant rights to clinical data,
 third-party model weights or third-party trademarks.
 
 Research use: this software is not a validated clinical diagnostic device.
-Citation metadata is provided in CITATION.cff. No DOI has been assigned yet.
+Citation metadata is provided in CITATION.cff.
+Archived release v1.0.0: https://doi.org/10.5281/zenodo.23434142
+The tagged release and archived ZIP preserve the source snapshot; this main
+branch additionally records the DOI assigned after publication.
