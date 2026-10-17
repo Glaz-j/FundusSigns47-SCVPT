@@ -1,0 +1,17 @@
+seed: 42
+epochs: 100
+batch_size: 96
+image_size: 224
+num_workers: 8
+optimizer: adamw
+learning_rate: 0.0003
+weight_decay: 0.0001
+sampler: weighted
+mixed_precision: true
+eval_every: 1
+early_stopping_patience: 12
+loss: asl
+asl_gamma_pos: 1.0
+asl_gamma_neg: 4.0
+asl_clip: 0.05
+search_thresholds: true

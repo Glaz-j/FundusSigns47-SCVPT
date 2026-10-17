@@ -1,0 +1,40 @@
+MODEL:
+  BACKBONE:
+    NAME: "local-dir:/path/to/project/external/BiomedCLIP_model"
+
+DATALOADER:
+  TRAIN_X:
+    BATCH_SIZE: 256
+  TEST:
+    BATCH_SIZE: 256
+  NUM_WORKERS: 0
+
+INPUT:
+  SIZE: (224, 224)
+  TRANSFORMS: ("normalize",)
+
+OPTIM:
+  NAME: "sgd"
+  LR: 0.002
+  MAX_EPOCH: 10
+  LR_SCHEDULER: "cosine"
+  WARMUP_EPOCH: 1
+  WARMUP_TYPE: "constant"
+  WARMUP_CONS_LR: 1e-5
+
+TRAIN:
+  PRINT_FREQ: 10
+  CHECKPOINT_FREQ: 1
+
+TEST:
+  EVALUATOR: "MultiLabelClassification"
+  FINAL_MODEL: "best_val"
+  NO_TEST: False
+
+TRAINER:
+  COOP:
+    N_CTX: 16
+    CSC: False
+    CTX_INIT: ""
+    PREC: "amp"
+    CLASS_TOKEN_POSITION: "end"

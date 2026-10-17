@@ -1,0 +1,7 @@
+dataset_version: vision3
+model_name: resnet50
+seed: 42
+data_config: configs/data/vision3.yaml
+model_config: configs/model/resnet50.yaml
+train_config: configs/train/cnn_resnet50_100ep.yaml
+eval_config: configs/eval/default.yaml

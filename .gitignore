@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+*.pth
+*.pt
+*.npz
+*.npy
+*.xlsx
+data/
+outputs/
+predictions.csv
+tmp_scvpt_predict/

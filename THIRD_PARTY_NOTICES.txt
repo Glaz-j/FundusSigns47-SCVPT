@@ -1,0 +1,21 @@
+Third-party notices
+
+This is a recovered research source snapshot. Exact historical upstream commit
+identifiers were not preserved; no verified upstream commit provenance is claimed.
+
+CoOp: https://github.com/KaiyangZhou/CoOp
+Vendored and adapted in code/external/CoOp. MIT; see that directory's LICENSE.
+The upstream README contains the CoOp and CoCoOp paper citations.
+
+OpenAI CLIP: https://github.com/openai/CLIP
+Vendored in code/external/CoOp/clip. MIT; see that directory's LICENSE.
+
+Dassl.pytorch: https://github.com/KaiyangZhou/Dassl.pytorch
+Vendored in code/external/Dassl.pytorch. MIT; original LICENSE retained.
+
+OpenCLIP, PyTorch, torchvision, timm, and other installed packages are external
+dependencies and retain their own licenses. No pretrained checkpoint is shipped.
+Model weight terms must be assessed separately before any weight redistribution.
+
+Project additions and adaptations are licensed under the root MIT LICENSE.
+Private source paths and staff filenames in this publication copy were sanitized.

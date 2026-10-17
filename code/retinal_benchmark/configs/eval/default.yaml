@@ -1,0 +1,7 @@
+metrics:
+  - mAP
+  - macro_f1
+  - micro_f1
+  - macro_auc
+save_predictions: true
+save_per_class_metrics: true

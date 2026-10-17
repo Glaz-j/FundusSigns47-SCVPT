@@ -1,0 +1,5 @@
+DATASET:
+  NAME: "RetinalVision2"
+  ROOT: "/path/to/private_source"
+  MANIFEST_PATH: "/path/to/private_source/retinal_benchmark/data_versions/vision2/manifest.csv"
+  LABEL_MAP_PATH: "/path/to/private_source/retinal_benchmark/data_versions/vision2/lesion_label_map.json"

@@ -1,0 +1,7 @@
+dataset_version: vision2
+model_name: inception_v3
+seed: 42
+data_config: configs/data/vision2.yaml
+model_config: configs/model/inception_v3.yaml
+train_config: configs/train/cnn_inception_baseline.yaml
+eval_config: configs/eval/default.yaml

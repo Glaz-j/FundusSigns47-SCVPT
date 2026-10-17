@@ -1,0 +1,7 @@
+dataset_version: vision2
+model_name: efficientnet_b4
+seed: 42
+data_config: configs/data/vision2.yaml
+model_config: configs/model/efficientnet_b4.yaml
+train_config: configs/train/cnn_efficientnet_b4_fast.yaml
+eval_config: configs/eval/default.yaml

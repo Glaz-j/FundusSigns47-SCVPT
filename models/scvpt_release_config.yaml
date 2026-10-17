@@ -1,0 +1,53 @@
+DATASET:
+  NAME: "RetinalVision3"
+  MANIFEST_PATH: ""
+  LABEL_MAP_PATH: "models/lesion_label_map.json"
+  MAX_TRAIN_SAMPLES: -1
+  MAX_VAL_SAMPLES: -1
+  MAX_TEST_SAMPLES: -1
+  IMAGE_CACHE_DIR: ""
+  IMAGE_CACHE_EXT: "jpg"
+  INCEPTION_IMAGE_CACHE_DIR: ""
+
+DATALOADER:
+  NUM_WORKERS: 0
+  TRAIN_X:
+    BATCH_SIZE: 4
+  TEST:
+    BATCH_SIZE: 4
+
+INPUT:
+  SIZE: (256, 256)
+  INTERPOLATION: "bicubic"
+  PIXEL_MEAN: [0.48145466, 0.4578275, 0.40821073]
+  PIXEL_STD: [0.26862954, 0.26130258, 0.27577711]
+  TRANSFORMS: ["resize", "center_crop", "normalize"]
+
+MODEL:
+  BACKBONE:
+    NAME: "openclip:ViT-gopt-16-SigLIP2-256:none"
+
+TRAINER:
+  STAGE2VIS:
+    MODE: "full_inception_candidate_adaptive"
+    HIDDEN_DIM: 512
+    ALPHA_INIT: 0.05
+    PREC: "amp"
+    CANDIDATE_THRESHOLD: 0.18
+    CANDIDATE_TOPK: 9
+    CANDIDATE_SOFT_SCALE: 10.5
+    TEACHER_CKPT: ""
+    INIT_FROM_TEACHER: False
+    INCEPTION_PRETRAINED: False
+    RELEASE_INFERENCE: True
+  VPT:
+    N_CTX: 16
+    N_DEEP_LAYERS: -1
+    PREC: "amp"
+    INIT_STD: 0.02
+    DROPOUT: 0.0
+    TRAIN_LOGIT_SCALE: True
+    TRAIN_PROJ: True
+    TRAIN_NORM: True
+    LOSS_NAME: "bce"
+    FROZEN_MODEL_PATH: ""

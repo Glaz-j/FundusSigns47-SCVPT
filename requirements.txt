@@ -1,0 +1,11 @@
+# Starting environment, not an exact historical dependency lock.
+-r docs/requirements_scvpt.txt
+scipy
+gdown
+tensorboard
+future
+matplotlib
+seaborn
+openpyxl
+transformers
+einops

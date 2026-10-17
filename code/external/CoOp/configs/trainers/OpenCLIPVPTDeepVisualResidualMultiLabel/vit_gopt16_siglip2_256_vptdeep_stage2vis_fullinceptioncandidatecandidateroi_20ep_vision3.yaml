@@ -1,0 +1,62 @@
+DATASET:
+  IMAGE_CACHE_DIR: "/path/to/project/external/CoOp/cache/retinal_image_cache_288_v3"
+  IMAGE_CACHE_EXT: "jpg"
+  INCEPTION_IMAGE_CACHE_DIR: "/path/to/project/external/CoOp/cache/retinal_inception299_imnet_v3"
+
+DATALOADER:
+  NUM_WORKERS: 2
+  TRAIN_X:
+    BATCH_SIZE: 4
+  TEST:
+    BATCH_SIZE: 16
+
+INPUT:
+  SIZE: (256, 256)
+  INTERPOLATION: "bicubic"
+  PIXEL_MEAN: [0.48145466, 0.4578275, 0.40821073]
+  PIXEL_STD: [0.26862954, 0.26130258, 0.27577711]
+  TRANSFORMS: ["random_resized_crop", "random_flip", "normalize"]
+
+MODEL:
+  BACKBONE:
+    NAME: "openclip:ViT-gopt-16-SigLIP2-256:webli"
+
+OPTIM:
+  NAME: "adamw"
+  LR: 0.00005
+  WEIGHT_DECAY: 0.0001
+  MAX_EPOCH: 20
+  LR_SCHEDULER: "cosine"
+  WARMUP_EPOCH: 1
+
+TEST:
+  EVAL_FREQ: 5
+  FINAL_MODEL: "last_step"
+
+TRAIN:
+  PRINT_FREQ: 20
+
+TRAINER:
+  STAGE2VIS:
+    MODE: "full_inception_candidate_candidateroi"
+    HIDDEN_DIM: 512
+    ALPHA_INIT: 0.05
+    RETRIEVAL_ALPHA_INIT: 0.05
+    PREC: "amp"
+    CANDIDATE_THRESHOLD: 0.25
+    CANDIDATE_TOPK: 8
+    LOCAL_PATCH_WEIGHT: 0.75
+    ROI_RATIO_MEDIUM: 0.45
+    TEACHER_CKPT: "/path/to/project/retinal_benchmark/experiments/logs/vision3__inception_v3__42__20260412_055020/checkpoints/best.pt"
+    INIT_FROM_TEACHER: True
+  VPT:
+    N_CTX: 16
+    N_DEEP_LAYERS: -1
+    PREC: "amp"
+    INIT_STD: 0.02
+    DROPOUT: 0.0
+    TRAIN_LOGIT_SCALE: True
+    TRAIN_PROJ: True
+    TRAIN_NORM: True
+    LOSS_NAME: "bce"
+    FROZEN_MODEL_PATH: "/path/to/project/external/CoOp/output/retinal_vision3/OpenCLIPVPTDeepOnlyMultiLabel/vit_gopt16_siglip2_256_ctx16_fulldepth_tuned_cuda0/model/model-best.pth.tar"

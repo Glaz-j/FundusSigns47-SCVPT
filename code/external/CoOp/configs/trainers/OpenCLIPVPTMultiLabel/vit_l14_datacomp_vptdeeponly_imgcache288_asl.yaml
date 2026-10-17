@@ -1,0 +1,48 @@
+MODEL:
+  BACKBONE:
+    NAME: "openclip:ViT-L-14:datacomp_xl_s13b_b90k"
+
+DATALOADER:
+  TRAIN_X:
+    BATCH_SIZE: 8
+  TEST:
+    BATCH_SIZE: 8
+  NUM_WORKERS: 4
+
+INPUT:
+  SIZE: (224, 224)
+  TRANSFORMS: ("normalize",)
+
+DATASET:
+  IMAGE_CACHE_DIR: "/path/to/project/external/CoOp/cache/retinal_image_cache_288_full"
+  IMAGE_CACHE_EXT: "jpg"
+
+OPTIM:
+  NAME: "adamw"
+  LR: 0.001
+  WEIGHT_DECAY: 0.01
+  MAX_EPOCH: 100
+  LR_SCHEDULER: "cosine"
+  WARMUP_EPOCH: 0
+
+TRAIN:
+  PRINT_FREQ: 20
+  CHECKPOINT_FREQ: 10
+
+TEST:
+  EVALUATOR: "MultiLabelClassification"
+  FINAL_MODEL: "best_val"
+  EVAL_FREQ: 10
+  NO_TEST: False
+
+TRAINER:
+  VPT:
+    N_CTX: 8
+    PREC: "amp"
+    INIT_STD: 0.02
+    DROPOUT: 0.0
+    LOSS_NAME: "asl"
+    ASL_GAMMA_NEG: 4.0
+    ASL_GAMMA_POS: 1.0
+    ASL_CLIP: 0.05
+    ASL_EPS: 1.0e-8

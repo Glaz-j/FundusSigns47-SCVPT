@@ -1,0 +1,7 @@
+DATASET:
+  NAME: "RetinalVision3"
+  MANIFEST_PATH: "/path/to/project/retinal_benchmark/data_versions/vision3/manifest.csv"
+  LABEL_MAP_PATH: "/path/to/project/retinal_benchmark/data_versions/vision3/lesion_label_map.json"
+  MAX_TRAIN_SAMPLES: -1
+  MAX_VAL_SAMPLES: -1
+  MAX_TEST_SAMPLES: -1

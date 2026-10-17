@@ -1,0 +1,16 @@
+name: retinal-benchmark
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch=2.2
+  - torchvision=0.17
+  - pytorch-cuda=11.8
+  - pandas
+  - scikit-learn
+  - openpyxl
+  - pyyaml
+  - pillow
+  - pip

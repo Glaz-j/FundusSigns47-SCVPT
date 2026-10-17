@@ -1,0 +1,7 @@
+dataset_version: vision3
+model_name: swin_tiny
+seed: 42
+data_config: configs/data/vision3.yaml
+model_config: configs/model/swin_tiny.yaml
+train_config: configs/train/cnn_swin_tiny_100ep.yaml
+eval_config: configs/eval/default.yaml

@@ -1,0 +1,7 @@
+name: resnet18
+task: retinal_lesion_multilabel
+num_classes: 47
+pretrained: true
+pooling: avg
+head_activation: sigmoid
+loss: bce_with_logits

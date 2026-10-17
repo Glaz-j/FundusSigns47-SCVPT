@@ -1,0 +1,7 @@
+dataset_version: vision3
+model_name: vit_b16
+seed: 42
+data_config: configs/data/vision3.yaml
+model_config: configs/model/vit_b16.yaml
+train_config: configs/train/cnn_vit_b16_100ep.yaml
+eval_config: configs/eval/default.yaml

@@ -1,0 +1,7 @@
+dataset_version: vision2
+model_name: resnet18
+seed: 42
+data_config: configs/data/vision2.yaml
+model_config: configs/model/resnet18_baseline.yaml
+train_config: configs/train/cnn_10ep.yaml
+eval_config: configs/eval/default.yaml

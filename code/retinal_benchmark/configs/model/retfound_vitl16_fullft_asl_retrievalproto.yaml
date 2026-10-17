@@ -1,0 +1,5 @@
+name: retfound_vitl16_exp
+num_classes: 47
+pretrained: true
+variant: full
+aux_head: retrievalproto

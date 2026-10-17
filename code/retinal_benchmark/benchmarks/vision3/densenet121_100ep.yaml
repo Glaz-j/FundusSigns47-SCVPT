@@ -1,0 +1,7 @@
+dataset_version: vision3
+model_name: densenet121
+seed: 42
+data_config: configs/data/vision3.yaml
+model_config: configs/model/densenet121.yaml
+train_config: configs/train/cnn_densenet121_100ep.yaml
+eval_config: configs/eval/default.yaml

@@ -1,0 +1,14 @@
+torch>=2.2
+torchvision>=0.17
+open_clip_torch
+timm
+pandas
+numpy
+scikit-learn
+Pillow
+PyYAML
+yacs
+ftfy
+regex
+tqdm
+tabulate

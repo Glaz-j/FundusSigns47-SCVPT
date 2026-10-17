@@ -1,0 +1,11 @@
+name: convnext_tiny_mldecoder
+task: retinal_lesion_multilabel
+num_classes: 47
+pretrained: true
+pooling: decoder
+head_activation: sigmoid
+loss: bce_with_logits
+num_queries: 16
+decoder_dim: 256
+decoder_heads: 8
+decoder_layers: 2
