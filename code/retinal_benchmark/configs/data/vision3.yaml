@@ -1,0 +1,17 @@
+dataset_version: vision3
+manifest_path: /path/to/project/retinal_benchmark/data_versions/vision3/manifest.csv
+image_root: /path/to/private_source/eyedataset/厦大AI
+image_cache_dir: /path/to/project/external/CoOp/cache/retinal_image_cache_288_v3
+image_cache_ext: jpg
+label_mode: multi_label
+num_classes: 47
+batch_ids:
+  - "202952"
+  - "202997"
+  - "203011"
+  - "203093"
+  - "203257"
+split_strategy: patient_level
+notes:
+  - Vision3 starts from vision2 and appends recovered 203257 retinal detachment images.
+  - Existing vision2 cache files are reused whenever sample_id stays unchanged.

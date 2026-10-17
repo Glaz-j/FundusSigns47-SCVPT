@@ -1,0 +1,14 @@
+dataset_version: vision1
+manifest_path: /path/to/private_source/retinal_benchmark/data_versions/vision1/manifest.csv
+image_root: /path/to/private_source/eyedataset/厦大AI
+label_mode: multi_label
+num_classes: 47
+batch_ids:
+  - "202952"
+  - "202997"
+  - "203011"
+  - "203093"
+split_strategy: patient_level
+notes:
+  - Build the manifest before training.
+  - Keep source paths absolute in the manifest for reproducibility.

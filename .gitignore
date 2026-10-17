@@ -7,7 +7,7 @@ __pycache__/
 *.npz
 *.npy
 *.xlsx
-data/
+/data/
 outputs/
 predictions.csv
 tmp_scvpt_predict/

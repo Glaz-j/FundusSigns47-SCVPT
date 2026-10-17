@@ -1,0 +1,17 @@
+dataset_version: vision2
+manifest_path: /path/to/private_source/retinal_benchmark/data_versions/vision2/manifest.csv
+image_root: /path/to/private_source/eyedataset/厦大AI
+image_cache_dir: /path/to/private_source/external/CoOp/cache/retinal_image_cache_288_full
+image_cache_ext: jpg
+label_mode: multi_label
+num_classes: 47
+batch_ids:
+  - "202952"
+  - "202997"
+  - "203011"
+  - "203093"
+  - "203257"
+split_strategy: patient_level
+notes:
+  - This version keeps one canonical annotation file per batch.
+  - Batch 203257 currently contributes only the subset that matches the existing image corpus.
